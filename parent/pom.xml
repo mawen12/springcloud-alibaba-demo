@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.mawen</groupId>
+    <artifactId>springcloud-alibaba-demo.parent</artifactId>
+    <version>${revision}</version>
+    <packaging>pom</packaging>
+
+    <description>springcloud-alibaba-demo Top-level POM</description>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+
+        <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
+        <springcloud.version>Hoxton.SR12</springcloud.version>
+        <springcloud-alibaba.version>2.1.0.RELEASE</springcloud-alibaba.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${springcloud.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${springcloud-alibaba.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <modules>
+        <module>../nacos/cloudalibaba-provider-payment9001</module>
+        <module>../sentinel/cloudalibaba-sentinel-service8401</module>
+        <module>../feign/user</module>
+        <module>../feign/consumer</module>
+        <module>../feign/user/app</module>
+        <module>../feign/user/api</module>
+        <module>../feign/user/service</module>
+    </modules>
+
+    <profiles>
+        <profile>
+            <id>user</id>
+            <modules>
+                <module>../feign/user/api</module>
+                <module>../feign/user/service</module>
+                <module>../feign/user/app</module>
+            </modules>
+        </profile>
+
+        <profile>
+            <id>config</id>
+            <modules>
+                <module>../nacos/cloudalibaba-config-nacos-client3377</module>
+            </modules>
+        </profile>
+
+        <profile>
+            <id>discovery</id>
+            <modules>
+                <module>../nacos/cloudalibaba-consumer-payment8000</module>
+                <module>../nacos/cloudalibaba-provider-payment9001</module>
+                <module>../nacos/cloudalibaba-provider-payment9002</module>
+            </modules>
+        </profile>
+    </profiles>
+
+</project>
