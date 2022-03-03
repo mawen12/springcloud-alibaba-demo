@@ -14,6 +14,7 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <parent.version>1.0.0</parent.version>
 
         <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
         <springcloud.version>Hoxton.SR12</springcloud.version>
@@ -81,6 +82,13 @@
                 <module>../nacos/cloudalibaba-consumer-payment8000</module>
                 <module>../nacos/cloudalibaba-provider-payment9001</module>
                 <module>../nacos/cloudalibaba-provider-payment9002</module>
+            </modules>
+        </profile>
+
+        <profile>
+            <id>gateway</id>
+            <modules>
+                <module>../cloud-gateway-gateway9527</module>
             </modules>
         </profile>
     </profiles>

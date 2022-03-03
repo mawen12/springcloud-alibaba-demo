@@ -17,6 +17,7 @@
 
     <modules>
         <module>parent</module>
+        <module>cloud-gateway-gateway9527</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -31,8 +32,7 @@
         </dependencies>
     </dependencyManagement>
 
-
-   <!-- <build>
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -41,7 +41,6 @@
                 <configuration>
                 </configuration>
                 <executions>
-                    &lt;!&ndash; enable flattening &ndash;&gt;
                     <execution>
                         <id>flatten</id>
                         <phase>process-resources</phase>
@@ -49,7 +48,6 @@
                             <goal>flatten</goal>
                         </goals>
                     </execution>
-                    &lt;!&ndash; ensure proper cleanup &ndash;&gt;
                     <execution>
                         <id>flatten.clean</id>
                         <phase>clean</phase>
@@ -60,7 +58,7 @@
                 </executions>
             </plugin>
         </plugins>
-    </build>-->
+    </build>
 
 
 </project>
