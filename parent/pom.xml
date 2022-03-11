@@ -55,16 +55,12 @@
         <module>../feign/user</module>
         <module>../feign/consumer</module>
         <module>../feign/user/app</module>
-        <module>../feign/user/api</module>
-        <module>../feign/user/service</module>
     </modules>
 
     <profiles>
         <profile>
             <id>user</id>
             <modules>
-                <module>../feign/user/api</module>
-                <module>../feign/user/service</module>
                 <module>../feign/user/app</module>
             </modules>
         </profile>
@@ -91,6 +87,14 @@
                 <module>../cloud-gateway-gateway9527</module>
             </modules>
         </profile>
+
+        <profile>
+            <id>bus</id>
+            <modules>
+                <module>../cloud-config-client</module>
+            </modules>
+        </profile>
+
     </profiles>
 
 </project>

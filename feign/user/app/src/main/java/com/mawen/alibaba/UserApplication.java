@@ -1,4 +1,4 @@
-package com.mawen.cloudalibaba.user;
+package com.mawen.alibaba;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
